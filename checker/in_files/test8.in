@@ -1,0 +1,39 @@
+4
+1
+https://site1.com/
+Site One
+2
+https://site2.com/
+Site Two
+3
+https://site3.com/
+Site Three
+4
+https://site4.com/
+Site Four
+25
+NEW_TAB
+NEW_TAB
+NEW_TAB
+OPEN 0
+PAGE 1
+PAGE 2
+PAGE 3
+BACKWARD
+BACKWARD
+FORWARD
+NEXT
+PREV
+NEXT
+PREV
+PAGE 4
+BACKWARD
+FORWARD
+CLOSE
+OPEN 1
+PAGE 1
+PAGE 2
+PRINT
+PRINT_HISTORY 1
+PRINT_HISTORY 3
+PRINT
