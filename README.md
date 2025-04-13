@@ -1,6 +1,6 @@
 # Checker pentru tema 1 de la sda
 
-1. Clone Repositary
+1. Clone Repository
 
     ```bash
     git clone https://github.com/PredescuSebastianIon/checker-sda-tema1.git
