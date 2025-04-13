@@ -41,16 +41,26 @@ for i in $(seq 1 12); do
 	#Run the target
 	#echo "running target: $TARGET"
 	cd "$SRC_DIR"
-	"$TARGET"
+	#"$TARGET"
+	valgrind --leak-check=full --error-exitcode=99 --show-leak-kinds=all --track-origins=yes --verbose "$TARGET" > valgrind.log 2>&1
+	VALGRIND_CODE=$?
 
 	cd "../checker"
 	if diff -q "$SRC_DIR/tema1.out" "$expected_output" > /dev/null; then
-		echo "$test_name: PASSED 5/5"
+		echo -n "$test_name: PASSED 5/5"
 		PASS_COUNT=$((PASS_COUNT + 1))
 	else
 		cat "$SRC_DIR/tema1.out"
-		echo "$test_name: FAILED 0/5"
+		echo -n "$test_name: FAILED 0/5"
 		FAILED_COUNT=$((FAILED_COUNT + 1))
+	fi
+
+	if [ $VALGRIND_CODE -eq 0 ]; then
+		echo " | No memory leaks"
+	else
+		echo " | Memory leaks"
+		echo "Please take test $i and run manually to see more detalies using:"
+		echo "valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./tema"
 	fi
 done
 
