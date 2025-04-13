@@ -4,7 +4,7 @@
 
     ```bash
     git clone https://github.com/PredescuSebastianIon/checker-sda-tema1.git
-    cd checker-sda-tema/checker
+    cd ./checker-sda-tema1/checker
     chmod +wx checker.sh
     cd ../src
 
